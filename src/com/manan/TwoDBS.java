@@ -1,8 +1,31 @@
+//2D Array Binary Search
 package com.manan;
+import java.util.Arrays;
 
 public class TwoDBS {
     public static void main(String[] args) {
-        System.out.println("Hello!");
-        System.out.println("Sup?");
+        int[][] arr = {
+                {10,20,30,40},
+                {15,25,35,45},
+                {28,29,37,49},
+                {33,34,38}
+        };
+        System.out.println(Arrays.toString(search(arr,30)));
+    }
+    static int[] search(int[][] arr, int target){
+        int r= 0;
+        int c= arr[0].length -1;
+
+        while(r<arr.length && c>=0){
+            if(arr[r][c]==target){
+                return new int[]{r,c};
+            }
+            if(arr[r][c]<target){
+                r++;
+            }else{
+                c--;
+            }
+        }
+        return new int[]{-1,-1};
     }
 }
