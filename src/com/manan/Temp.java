@@ -5,29 +5,29 @@ import java.util.Arrays;
 public class Temp {
     public static void main(String[] args) {
 
-        int[] nums = {7,8,9,11,12};
-        System.out.println(firstMissingPositive(nums));
+        int n = 4;
+
+//        for(int i = 0;i<n;i++){
+//            for(int j = 1;j<=n-i;j++){
+//                System.out.print(j);
+//            }
+//            System.out.println();
+//        }
+        for(int i = 1 ; i <= 2*n - 1 ; i++){
+            if(i<=n){
+                for(int j = 1 ; j<=i ; j++){
+                    System.out.print("* ");
+                }
+            }else{
+
+                for(int t = n ; t>=i-n+1;t--){
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
 
     }
-    public static int firstMissingPositive(int[] nums) {
-        int i = 0;
-        int ans = 0;
-        while(i< nums.length){
-            int correct  = nums[i] - 1;
-            if(nums[i]>0 && nums[correct] != nums[i] && nums[i]<= nums.length){
-                int temp = nums[correct];
-                nums[correct] = nums[i];
-                nums[i] = temp;
-            }else{
-                i++;
-            }
-        }
-        for(int j = 0;j<nums.length;j++){
-            if(nums[j]!=j+1){
-                ans = j+1;
-            }
-        }
-    return ans;
-    }
+
 }
 
