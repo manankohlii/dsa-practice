@@ -2,7 +2,7 @@ package com.leetcode;
 
 public class p27 {
     public static void main(String[] args) {
-        int[] i = [2,3,3,3];
+        int[] i = {2,3,3,3};
 
         removeElement(i,2);
     }
