@@ -1,7 +1,7 @@
 package com.recursion;
 
 import java.util.Arrays;
-
+//add code for merge sort InPlace
 public class mergeSort {
     public static void main(String[] args) {
         int[] arr = {5,4,3,2,1,6};
