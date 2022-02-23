@@ -5,6 +5,7 @@ public class StringQues {
         skip("","abcdabadc");
         System.out.println(skipAlt("abcdabadc"));
         System.out.println(skipApple("baapplemank"));
+        System.out.println(skipAppnotApple("baapplemank"));
     }
     public static void skip(String p,String up){
         if(up.isEmpty()){
@@ -39,6 +40,16 @@ public class StringQues {
             return skipApple(up.substring(5));
         }else{
             return up.charAt(0) + skipApple(up.substring(1));
+        }
+    }
+    public static String skipAppnotApple(String up){
+        if(up.isEmpty()){
+            return "";
+        }
+        if(up.startsWith("app") && !up.startsWith("apple")){
+            return skipAppnotApple(up.substring(3));
+        }else{
+            return up.charAt(0) + skipAppnotApple(up.substring(1));
         }
     }
 }
